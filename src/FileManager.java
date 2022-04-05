@@ -3,8 +3,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class FileManager {
-    File bList = new File("C:\\Users\\janni\\IdeaProjects\\MorseUbersetzer\\src\\Buchstaben.txt");
-    File mList = new File("C:\\Users\\janni\\IdeaProjects\\MorseUbersetzer\\src\\MorseCode.txt");
+    File bList = new File("Buchstaben.txt");
+    File mList = new File("MorseCode.txt");
 
     public void ReadBFile(List list) throws FileNotFoundException {
         Scanner myReader = new Scanner(bList);
