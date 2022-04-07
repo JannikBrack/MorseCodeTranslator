@@ -1,6 +1,3 @@
-import java.awt.*;
-import java.util.Locale;
-
 public class List {
     private final String[] listB = new String[37];
     private final String[] listM = new String[37];
@@ -12,36 +9,25 @@ public class List {
         listM[itemPos] = newItem;
     }
 
-
-    public String getItem(String listType, int number) {
-        return switch (listType) {
-            case "listB" -> listB[number];
-            case "listM" -> listM[number];
-            default -> "programmier es bitch";
-        };
-    }
-
     public String translating(String input){
 
-        String[] translatet = new String[input.length()];
-
-        String finalTranslation = " ";
-        String letter = "";
+        StringBuilder finalTranslation = new StringBuilder(" ");
+        String letter;
 
         for (int i = 0; i < input.length(); i++){
             letter = String.valueOf(input.charAt(i));
             for (int k = 0; k < listB.length; k ++){
                 if (listB[k].equalsIgnoreCase(letter)){
-                    finalTranslation = finalTranslation + listM[k];
+                    finalTranslation.append(listM[k]);
                 }
             }
             if (letter.equalsIgnoreCase("|")){
-                finalTranslation = finalTranslation + "| ";
+                finalTranslation.append("| ");
             }
             else {
-                finalTranslation = finalTranslation +" ";
+                finalTranslation.append(" ");
             }
         }
-        return finalTranslation;
+        return finalTranslation.toString();
     }
 }
